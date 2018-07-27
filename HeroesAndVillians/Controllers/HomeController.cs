@@ -97,7 +97,7 @@ namespace HeroesAndVillians.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult ConfirmDelete(int? id)
+        public ActionResult DeleteConfirmed(int id)
         {
             var character = _context.Character.Find(id);
             _context.Character.Remove(character);
