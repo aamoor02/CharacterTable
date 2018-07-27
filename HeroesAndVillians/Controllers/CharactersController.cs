@@ -13,39 +13,24 @@ namespace HeroesAndVillians.Controllers
 {
     public class CharactersController : Controller
     {
+        //private variable that will be accessed through the controller methods
         private Context db = new Context();
 
-        // GET: Characters
+        // GET: Characters that will return a list of characters
         public ActionResult Index()
         {
             return View(db.Character.ToList());
         }
 
-        // GET: Characters/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Characters characters = db.Character.Find(id);
-            if (characters == null)
-            {
-                return HttpNotFound();
-            }
-            return View(characters);
-        }
-
-        // GET: Characters/Create
+       // GET: Characters/Create
         public ActionResult Create()
         {
             return View();
         }
 
         // POST: Characters/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        
+        [HttpPost]//designates the  ActionResult Method as a post method
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Creator,CreationDate,Fav")] Characters characters)
         {
@@ -75,8 +60,7 @@ namespace HeroesAndVillians.Controllers
         }
 
         // POST: Characters/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Creator,CreationDate,Fav")] Characters characters)
@@ -116,6 +100,7 @@ namespace HeroesAndVillians.Controllers
             return RedirectToAction("Index");
         }
 
+        //dispose of the controller when finished to prevent data leaks
         protected override void Dispose(bool disposing)
         {
             if (disposing)

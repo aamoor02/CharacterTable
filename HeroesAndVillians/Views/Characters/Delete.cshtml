@@ -4,18 +4,20 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2><span class="first">R</span>emove some Characters</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="color">Are you sure you want to delete this?</h3>
 <div>
-    <h4>Characters</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @*Render the label for the field*@
             @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
+            @*Render the data associated with the field*@
             @Html.DisplayFor(model => model.Name)
         </dd>
 
@@ -50,7 +52,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Back to your List", "Index")
         </div>
     }
 </div>

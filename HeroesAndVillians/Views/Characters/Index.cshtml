@@ -4,13 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2><span class="first">Y</span>our table of Characters</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add to your Collection", "Create")
 </p>
 <table class="table">
     <tr>
+        @*Display label names for the table fields*@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -26,6 +27,7 @@
         <th></th>
     </tr>
 
+@*Cycle through the model and display proper field*@
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -42,7 +44,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

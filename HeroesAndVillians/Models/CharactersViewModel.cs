@@ -7,8 +7,7 @@ namespace HeroesAndVillians.Models
 {
     public class CharactersViewModel
     {
-        //Using IEnumerable as view models do not require the functionality
-        //of the List collection type and allows for other collection types
+        //private list to be accessed by other method
         private List<Characters> _characters;
 
         //default constructor

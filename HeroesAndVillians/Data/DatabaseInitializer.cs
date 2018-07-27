@@ -7,11 +7,13 @@ using System.Web;
 
 namespace HeroesAndVillians.Data
 {
+    //The database will drop the previous database and create a new one if there are changes to the model
     public class DatabaseInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
         protected override void Seed(Context context)
         {
 
+            //create a list to populate with characters
             IList<Characters> character = new List<Characters>();
 
             character.Add(new Characters()
@@ -25,24 +27,24 @@ namespace HeroesAndVillians.Data
             character.Add(new Characters()
             {
                 Name = "Batman",
-                Creator = "Akira Toriyama",
-                CreationDate = "02/15/2015",
+                Creator = "Bob Kane and Bill Finger",
+                CreationDate = "07/23/1939",
                 Fav = true
             });
 
             character.Add(new Characters()
             {
                 Name = "Superman",
-                Creator = "Akira Toriyama",
-                CreationDate = "02/15/2015",
+                Creator = "Jerry Siegel and Joe Shuster",
+                CreationDate = "04/18/1938",
                 Fav = true
             });
 
             character.Add(new Characters()
             {
                 Name = "Green Goblin",
-                Creator = "Akira Toriyama",
-                CreationDate = "02/15/2015",
+                Creator = "Stan Lee",
+                CreationDate = "07/15/1964",
                 Fav = true
             });
 
@@ -50,7 +52,7 @@ namespace HeroesAndVillians.Data
             {
                 Name = "Cable",
                 Creator = "Akira Toriyama",
-                CreationDate = "02/15/2015",
+                CreationDate = "01/11/1986",
                 Fav = true
             });
 

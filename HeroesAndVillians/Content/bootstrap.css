@@ -238,6 +238,8 @@ label {
 
 button {
   border-radius: 0;
+  background-color: red;
+  color: black;
 }
 
 button:focus {

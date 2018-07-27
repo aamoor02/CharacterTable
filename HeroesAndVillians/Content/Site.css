@@ -17,13 +17,22 @@
     white-space: normal;
 }
 
+.color{
+    color: red;
+}
+
+
+button {
+    background-color: red;
+    color: black;
+}
 
 th {
     background-color: red;
     color: black;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
     background-color: grey;
 }
 /* Set width on the form input elements since they're 100% wide by default */
