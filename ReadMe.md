@@ -1,0 +1,2 @@
+Hello this is a project that will allow the user to enter in their favorite characters in a database. This database will allow the user to add, edit and delete characters
+as well as display the information to the user.
